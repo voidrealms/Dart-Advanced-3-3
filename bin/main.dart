@@ -6,16 +6,16 @@ import 'package:path/path.dart' as p;
 
 main(List<String> arguments) {
 
-  List<String> files = new List<String>();
+  List<String> files = [];
   Directory.current.listSync().forEach((FileSystemEntity fse) {
-    if(fse.statSync().type == FileSystemEntityType.FILE) files.add(fse.path);
+    if(fse.statSync().type == FileSystemEntityType.file) files.add(fse.path);
   });
 
-  String zipfile = '/home/rootshell/Videos/test/test.zip';
+  String zipfile = '/Users/bryancairns/Downloads/compressed.zip';
 
   zip(files, zipfile);
 
-  unzip(zipfile, '/home/rootshell/Videos/test/decompressed');
+  unzip(zipfile, '/Users/bryancairns/Downloads/decompressed');
 
 }
 
